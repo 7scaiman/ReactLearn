@@ -5,11 +5,8 @@ import App from './App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-        React.createElement("button",{
-          
-          onclick: () => alert("sd")
-        },"ХЕлоу")
+root.render(  
+        <App />
 
 );
  
