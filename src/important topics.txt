@@ -1,0 +1,13 @@
+1 (Props)
+2 browserrouter
+3 navlink
+4 map
+5  bll(redux) ui(react)
+6 ref
+useState useEffect useContext(Hook)
+flux
+callback, subscribe, observer
+bind
+action
+dispatch
+reduce (функція яка приймає state,action)

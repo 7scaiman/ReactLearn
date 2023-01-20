@@ -1,4 +1,5 @@
 import React, {useState }from "react"; /// rfce
+import MyButton from "./UI/Button/MyButton";
 
 
 function Counter(props) {
@@ -11,12 +12,14 @@ function Counter(props) {
     setLikes(likes-1)
   }
   return(
-    <div>
+    <div className="post">
 
 
-        <h1>{likes}</h1>
-      <button onClick={Increment} >Increment</button>
-      <button onClick={Decrement}>Decrement</button> 
+        <h1 >{likes}</h1>
+        <div>
+           <MyButton onClick={Increment}>Increment</MyButton>
+           <MyButton onClick={Decrement}>Decrement</MyButton>
+        </div>
     </div>
   
   );
