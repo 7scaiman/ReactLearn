@@ -11,3 +11,4 @@ bind
 action
 dispatch
 reduce (функція яка приймає state,action)
+ e.preventDefault();   иключає дефолне поведіння браузера для <Form>Sumbit</Form>
