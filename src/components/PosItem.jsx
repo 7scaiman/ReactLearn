@@ -3,8 +3,7 @@ import MyButton from './UI/Button/MyButton'
 
 function PostItem(props) {
   const  DeletePost = () =>{
-    
-
+    props.RemovePost(props.post)  
   }
   return (
     <div className='post'>

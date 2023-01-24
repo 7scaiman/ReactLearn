@@ -22,7 +22,7 @@ function App() {
   const bodyInputRef = useRef();
   const desInputRef = useRef();
 
-  function AddNewPost(NewPost){
+  const AddNewPost = (NewPost) =>{
     let a = bodyInputRef.current.value;
     let b = desInputRef.current.value 
     console.log(bodyInputRef) //// виключає дефолне поведіння браузера
@@ -34,6 +34,11 @@ function App() {
     bodyInputRef.current.value = ""
     desInputRef.current.value = ""
   }
+
+  const RemovePost = (post) => {
+       setPosts(posts.filter(p=> p.id !== post.id)) 
+  }
+
   return (
     <body>
     <div className="App">
@@ -42,8 +47,7 @@ function App() {
     </div>
       <Counter/>
       <ClassCounter/>
-      <PostList posts ={posts} title="Cписок постів 1"/>
-      <PostList posts ={posts} title="Cписок постів 2"/>
+      <PostList RemovePost={RemovePost} posts ={posts} title="Cписок постів 1"/>
     </div>
     </body>
   );
