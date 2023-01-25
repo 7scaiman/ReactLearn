@@ -17,12 +17,11 @@ function App() {
   ])
   const [post,setpost] = useState({title:"  ",body:" "})
 
-
-  let  NewId = posts[ posts.length - 1].id+1
   const bodyInputRef = useRef();
   const desInputRef = useRef();
 
   const AddNewPost = (NewPost) =>{
+    console.log(posts)
     let a = bodyInputRef.current.value;
     let b = desInputRef.current.value 
     console.log(bodyInputRef) //// виключає дефолне поведіння браузера
@@ -30,7 +29,6 @@ function App() {
       return alert("The post should not be empty")
     }
     setPosts([...posts,NewPost]) //// добавлення елемента setElement([...arrEl,newElement])
-    NewId+=1;
     bodyInputRef.current.value = ""
     desInputRef.current.value = ""
   }
@@ -38,12 +36,18 @@ function App() {
   const RemovePost = (post) => {
        setPosts(posts.filter(p=> p.id !== post.id)) 
   }
-
+ let newid
+ if(posts[0] === undefined){
+    newid = 1
+ }
+ else{
+  newid  = posts[ posts.length - 1].id+1 
+ }
   return (
     <body>
     <div className="App">
     <div>
-      <AddPost bodyInputRef={bodyInputRef}  desInputRef={desInputRef} post={post} setpost={setpost} AddNewPost={AddNewPost} newID={NewId}  />
+      <AddPost bodyInputRef={bodyInputRef}  desInputRef={desInputRef} post={post} setpost={setpost} AddNewPost={AddNewPost} newID={newid}  />
     </div>
       <Counter/>
       <ClassCounter/>
