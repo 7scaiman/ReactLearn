@@ -17,8 +17,8 @@ function Counter(props) {
 
         <h1 >{likes}</h1>
         <div>
-           <MyButton onClick={Increment}>Increment</MyButton>
-           <MyButton onClick={Decrement}>Decrement</MyButton>
+           <MyButton onClick={Increment}>{props.Language.Increment}</MyButton>
+           <MyButton onClick={Decrement}>{props.Language.Decrement}</MyButton>
         </div>
     </div>
   

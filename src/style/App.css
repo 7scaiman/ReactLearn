@@ -18,3 +18,12 @@
     justify-content: space-between;
     align-items: center;
 }
+.language{
+    display:Flex;
+    flex-direction: row-reverse;
+}
+.flag{
+    height: 40px;
+    padding-left: 10px;
+    
+}

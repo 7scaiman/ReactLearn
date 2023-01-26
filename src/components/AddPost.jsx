@@ -11,9 +11,9 @@ function AddPost(props) {
 
   return (
  <form action="">
-        <MyInput type="text" placeholder='Назва поста' ref={props.bodyInputRef} onChange={e=> props.setpost({...props.post, title:e.target.value})}/>
-        <MyInput type="text" placeholder='Описання поста' ref={props.desInputRef} onChange={e => props.setpost({...props.post,body:e.target.value})} />
-        <MyButton onClick={CreatePost}>Create new post</MyButton>
+        <MyInput type="text" placeholder={props.Language.NamePost} ref={props.bodyInputRef} onChange={e=> props.setpost({...props.post, title:e.target.value})}/>
+        <MyInput type="text" placeholder={props.Language.Description} ref={props.desInputRef} onChange={e => props.setpost({...props.post,body:e.target.value})} />
+        <MyButton onClick={CreatePost}>{props.Language.CreatePost}</MyButton>
     </form>
 
   )
