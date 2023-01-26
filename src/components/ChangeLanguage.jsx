@@ -20,7 +20,12 @@ function ChangeLanguage(props) {
             Increment: "Increment",
             Decrement: "Decrement",
             DeletePost: "Delete",
-            CreatePost: "Create new post"
+            CreatePost: "Create new post",
+            NotEnoughPost: "Not enough post",
+            Sorting:"Sorting",
+            SortID: "Sort by id",
+            SortTitle:"Sort by name",
+            SortBody:"Sort by description"
         }
         props.ChangeUk(newLan)
     }
@@ -33,7 +38,12 @@ function ChangeLanguage(props) {
             Increment:"Плюс",
             Decrement:"мінус",
             DeletePost:"Видалити",
-            CreatePost:"Створити пост"    
+            CreatePost:"Створити пост",
+            NotEnoughPost:"Немає постів",
+            Sorting:"Сортування",
+            SortID: "По айді",
+            SortTitle:"По назві",
+            SortBody:"По опису"    
           }
           props.ChangeUa(newLan)
     }
