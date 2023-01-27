@@ -69,7 +69,6 @@ function App() {
   }
 
   const AddNewPost = (NewPost) =>{
-    console.log(Language)
     let a = bodyInputRef.current.value;
     let b = desInputRef.current.value 
     console.log(bodyInputRef) //// виключає дефолне поведіння браузера
