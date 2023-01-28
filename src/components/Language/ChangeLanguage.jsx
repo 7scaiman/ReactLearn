@@ -1,4 +1,6 @@
 import React from 'react'
+import { UA, UK } from '../../constants/language'
+
 let uk = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/2048px-United-kingdom_flag_icon_round.svg.png"
 let ua = "https://vectorflags.s3.amazonaws.com/flags/ua-circle-01.png"
 function ChangeLanguage(props) {
@@ -12,39 +14,11 @@ function ChangeLanguage(props) {
     //     CreatePost:"Створити пост"    
     //   }
     const ChangeUk = () => {
-        let newLan = {
-            AlertPost: "The line must not be empty",
-            PostList_title: "Post List",
-            NamePost: "Post name",
-            Description: "Description",
-            Increment: "Increment",
-            Decrement: "Decrement",
-            DeletePost: "Delete",
-            CreatePost: "Create new post",
-            NotEnoughPost: "Not enough post",
-            Sorting:"Sorting",
-            SortID: "Sort by id",
-            SortTitle:"Sort by name",
-            SortBody:"Sort by description"
-        }
+        let newLan = UK
         props.ChangeUk(newLan)
     }
     const ChangeUa = () => {
-        let newLan = {
-            AlertPost:"Рядок немає бути пуста",
-            PostList_title:"Cписок постів",
-            NamePost:"Назва поста",
-            Description:"Описання поста",
-            Increment:"Плюс",
-            Decrement:"мінус",
-            DeletePost:"Видалити",
-            CreatePost:"Створити пост",
-            NotEnoughPost:"Немає постів",
-            Sorting:"Сортування",
-            SortID: "По айді",
-            SortTitle:"По назві",
-            SortBody:"По опису"    
-          }
+        let newLan = UA
           props.ChangeUa(newLan)
     }
     return (

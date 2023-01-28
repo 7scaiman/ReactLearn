@@ -3,25 +3,10 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import FirstPage from './components/FirstPage';
 import ChangeLanguage from './components/Language/ChangeLanguage';
 import SecondPage from './components/SecondPage';
+import { UK } from './constants/language';
 import  "./style/App.css"
 function App(props) {
-  const [Language,setLangue] = useState(
-    {
-      AlertPost:"Рядок немає бути пуста",
-      PostList_title:"Cписок постів",
-      NamePost:"Назва поста",
-      Description:"Описання поста",
-      Increment:"Плюс",
-      Decrement:"мінус",
-      DeletePost:"Видалити",
-      CreatePost:"Створити пост",
-      NotEnoughPost:"Немає постів",
-      Sorting:"Сортування",
-      SortID: "По айді",
-      SortTitle:"По назві",
-      SortBody:"По опису" 
-    }
-  )
+  const [Language,setLangue] = useState(UK)
   const ChangeUk= (change) => {
     setLangue(change)
   }
