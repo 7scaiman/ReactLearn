@@ -1,5 +1,5 @@
 import React, {useState }from "react"; /// rfce
-import MyButton from "./UI/Button/MyButton";
+import MyButton from "../UI/Button/MyButton";
 
 
 function Counter(props) {

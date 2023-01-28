@@ -1,6 +1,6 @@
 import React from 'react'
-import MyButton from './UI/Button/MyButton'
-import MyInput from './UI/input/MyInput'
+import MyButton from '../UI/Button/MyButton'
+import MyInput from '../UI/input/MyInput'
 
 function AddPost(props) {
   function CreatePost(e){
