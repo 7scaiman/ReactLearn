@@ -11,7 +11,11 @@ export const UA = {
     Sorting:"Сортування",
     SortID: "По айді",
     SortTitle:"По назві",
-    SortBody:"По опису" 
+    SortBody:"По опису" ,
+    Name:"Імя",
+    Sex:"Стать",
+    Male: "Чоловік",
+    Female: "Жінка",
   }
 export const UK = {
     AlertPost: "The line must not be empty",
@@ -26,5 +30,9 @@ export const UK = {
     Sorting:"Sorting",
     SortID: "Sort by id",
     SortTitle:"Sort by name",
-    SortBody:"Sort by description"
+    SortBody:"Sort by description",
+    Name:"Name",
+    Sex:"Sex",
+    Male: "Male",
+    Female: "Female",
 }

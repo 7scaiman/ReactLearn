@@ -18,15 +18,15 @@ function App(props) {
     <BrowserRouter>
     <div>
      <div className='post'>
-      <div className='link'>
-       <NavLink to="/fistpage" className="link">1 page</NavLink>
+     
+       <NavLink to="/" className="link">1 page</NavLink>
        <NavLink to="/secondpage" className="link">2 page</NavLink>
-      </div>
+ 
        <ChangeLanguage ChangeUk={ChangeUk} ChangeUa={ChangeUa} />
      </div>
     <Routes>
-       <Route path='/fistpage' element={<FirstPage Language={Language} setLangue={setLangue}/>}/>
-       <Route path='/secondpage' element={<SecondPage/>}/>
+       <Route index element={<FirstPage Language={Language} setLangue={setLangue}/>}/>
+       <Route path='/secondpage' element={<SecondPage Language={Language}/>}/>
     </Routes>
     </div>
     </BrowserRouter>
