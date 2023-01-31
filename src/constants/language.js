@@ -16,6 +16,7 @@ export const UA = {
     Sex:"Стать",
     Male: "Чоловік",
     Female: "Жінка",
+    SearchPost: "Пошук поста",
   }
 export const UK = {
     AlertPost: "The line must not be empty",
@@ -35,4 +36,5 @@ export const UK = {
     Sex:"Sex",
     Male: "Male",
     Female: "Female",
+    SearchPost:"Search post",
 }

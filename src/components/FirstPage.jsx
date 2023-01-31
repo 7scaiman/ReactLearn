@@ -1,10 +1,11 @@
-import React, { useState,useRef } from 'react';
+import React, { useState,useRef, useMemo } from 'react';
 import ClassCounter from './1PAGE/ClassCounter';
 import Counter from './1PAGE/Counter';
 import PostList from './1PAGE/PostList';
 import AddPost from './1PAGE/AddPost';
 import ChangeLanguage from './Language/ChangeLanguage';
 import MySelect from './UI/Select/MySelect';
+import MyInput from './UI/input/MyInput';
 
 
 function FirstPage({Language,setLangue,...props}) {
@@ -20,6 +21,10 @@ function FirstPage({Language,setLangue,...props}) {
     {id:3,title:"Js c",body:value},
     {id:4,title:"Js d",body:value}
   ])
+
+ const [searchQuery,setSearchQuery] = useState("")
+
+
   let newid
   if(posts[0] === undefined){
      newid = 1
@@ -32,18 +37,7 @@ function FirstPage({Language,setLangue,...props}) {
   
   const bodyInputRef = useRef();
   const desInputRef = useRef();
-
-  const SortPost = (sort) => {
-    if(sort == "id"){
-      setSelectedSort(sort)
-      setPosts([...posts].sort((a,b) => a[sort]-b[sort]))
-    }
-    else{
-      setSelectedSort(sort)
-      setPosts([...posts].sort((a,b)=>a[sort].localeCompare(b[sort])))
-    }
-  }
-
+  
   const AddNewPost = (NewPost) =>{
     let a = bodyInputRef.current.value;
     let b = desInputRef.current.value 
@@ -55,6 +49,24 @@ function FirstPage({Language,setLangue,...props}) {
     bodyInputRef.current.value = ""
     desInputRef.current.value = ""
   }
+  
+
+    const sortedPosts = useMemo(()=> {
+      console.log("sdadasdasda  ")
+      if(selectedSort)
+      {
+        return [...posts].sort((a,b)=>a[selectedSort].localeCompare(b[selectedSort]))
+      }
+      return posts
+    },[selectedSort,posts])
+
+    const sortedAndSearchedPosts = useMemo(()=> {
+            return sortedPosts.filter(post => post.title.toLowerCase().includes(searchQuery))
+    },[searchQuery, sortedPosts])
+  
+    const SortPost = (sort) => {
+        setSelectedSort(sort)
+    }
 
   const RemovePost = (post) => {
        setPosts(posts.filter(p=> p.id !== post.id))  /// видалення поста по айпи
@@ -68,14 +80,14 @@ function FirstPage({Language,setLangue,...props}) {
       <Counter Language={Language}/>
       <ClassCounter Language={Language}/>
       <div>
+        <MyInput type="text" placeholder={Language.SearchPost} onChange={(e) => setSearchQuery(e.target.value)}/>
         <MySelect defaultValue={Language.Sorting} value={selectedSort} onChange={SortPost} options={[
           {value:"title",name:Language.SortTitle},
           {value:"body",name:Language.SortBody},
-          {value:"id",name:Language.SortID}
         ]}/>
       </div>
-      {posts.length !== 0
-         ? <PostList RemovePost={RemovePost} posts ={posts} title={Language.PostList_title}  Language={Language} /> //// тернарний оператор
+      {sortedAndSearchedPosts.length !== 0
+         ? <PostList RemovePost={RemovePost} posts ={sortedAndSearchedPosts} title={Language.PostList_title}  Language={Language} /> //// тернарний оператор
          : <h1>{Language.NotEnoughPost}</h1>
       }
       
