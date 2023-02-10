@@ -19,10 +19,7 @@ function SecondPage({Language, ...props}) {
                 img:img,
             }
         })
-          console.log(list)
           setPeople(list)
-          console.log(res)
-        
     }
        useEffect(()=>{
         getRes(API_PEOPLE)
