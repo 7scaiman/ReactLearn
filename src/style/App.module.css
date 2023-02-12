@@ -1,0 +1,11 @@
+.linkTarget{
+    display: flex;
+    padding: 15px;
+    border: 2px solid teal;
+    background-color: yellow;
+}
+.link{
+    display: flex;
+    padding: 15px;
+    border: 2px solid teal;
+}
