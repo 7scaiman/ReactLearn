@@ -1,23 +1,19 @@
-import React, {useState }from "react"; /// rfce
-import { useEffect } from "react";
+import React, {useState, useEffect }from "react"; /// rfce
 import MyButton from "../UI/Button/MyButton";
 
 
 function Counter(props) {
-  const [likes,setLikes] = useState(0)
-  useEffect(()=> {
-   const raw = localStorage.getItem("likes") || []
-   setLikes(JSON.parse(raw))
-  },[])
+  const [likes,setLikes] = useState(+localStorage.getItem("likes") || 0)
+ 
   useEffect(() => {
       localStorage.setItem("likes",JSON.stringify(likes))
   },[likes]) /// componentDidMount, якщо добивити в масив яксь елемент то коли він буде імянтися буде спрацьовувати ця функція
   
   function Increment(){
-    setLikes(likes+1)
+    setLikes(prevlikes => prevlikes+1)
   }
   function Decrement(){
-    setLikes(likes-1)
+    setLikes(prevlikes => prevlikes-1)
   }
   return(
     <div className="post">

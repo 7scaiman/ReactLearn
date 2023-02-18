@@ -1,7 +1,6 @@
 import React from 'react'
 
 function People(props) {
-  console.log(props.img)
   let gender = "n/a";
   if(props.gender == "male"){
     gender = props.Language.Male

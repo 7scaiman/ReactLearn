@@ -10,4 +10,4 @@ export const getPeopleID = (url) => {
 
 export const getPeopleIMG = (id) => {
    return `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`
-}
+};

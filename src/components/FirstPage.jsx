@@ -3,7 +3,6 @@ import ClassCounter from './1PAGE/ClassCounter';
 import Counter from './1PAGE/Counter';
 import PostList from './1PAGE/PostList';
 import AddPost from './1PAGE/AddPost';
-import ChangeLanguage from './Language/ChangeLanguage';
 import MySelect from './UI/Select/MySelect';
 import MyInput from './UI/input/MyInput';
 
@@ -52,7 +51,6 @@ function FirstPage({Language,setLangue,...props}) {
   
 
     const sortedPosts = useMemo(()=> {
-      console.log("sdadasdasda  ")
       if(selectedSort)
       {
         return [...posts].sort((a,b)=>a[selectedSort].localeCompare(b[selectedSort]))
@@ -72,7 +70,7 @@ function FirstPage({Language,setLangue,...props}) {
        setPosts(posts.filter(p=> p.id !== post.id))  /// видалення поста по айпи
   }
   return (
-    <body>
+    <div>
     <div className="App">
     <div>
       <AddPost bodyInputRef={bodyInputRef} Language={Language}  desInputRef={desInputRef} post={post} setpost={setpost} AddNewPost={AddNewPost} newID={newid}  />
@@ -92,7 +90,7 @@ function FirstPage({Language,setLangue,...props}) {
       }
       
     </div>
-    </body>
+    </div>
   );
 }
 
